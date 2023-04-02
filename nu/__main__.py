@@ -27,6 +27,11 @@ def main():
     parser_tbot.add_argument("message", type=str)
     parser_tbot.set_defaults(func=tbot_do)
 
+    parser_pdfpw = subparsers.add_parser(
+        "pdfpw", help="Password-protect one or more PDF files")
+    parser_pdfpw.add_argument(pdfs, nargs="+")
+    parser_pdfpw.set_defaults(func=pdfpw_do)
+
     args = parser.parse_args()
     args.func(args)
 
@@ -64,6 +69,10 @@ def tbot_do(args):
     token = args.bot_token if args.bot_token is not None else nu.tbot.get_last_token()
     chat_id =  args.chat_id if args.chat_id is not None else nu.tbot.get_last_chat_id()
     nu.tbot.send_message(token, chat_id, message, args.save)
+
+
+def pdfpw_do(args):
+    nu.pdfpw.add_password(args.pdfs)
 
 
 if __name__ == "__main__":

@@ -2,8 +2,7 @@ import os
 from setuptools import setup, find_packages
 
 # Meta information
-version = "0.0.0-snapshot1"
-dirname = os.path.dirname(__file__)
+version = "0.0.0-snapshot3"
 
 setup(
     # Basic info

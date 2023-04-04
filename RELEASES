@@ -4,38 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.0.0-snapshot9]
-### CHANGED
-- Add packages=find_packages to setup.py
+Remember to update the version string in setup.py!
 
-## [0.0.0-snapshot8]
-### CHANGED
-- Reintroduce entry_points from setup.py
-
-## [0.0.0-snapshot7]
-### CHANGED
-- Try removing entry_points from setup.py
-
-## [0.0.0-snapshot6]
-### FIXED
-- Try removing py_modules from setup.py
-
-## [0.0.0-snapshot5]
-### FIXED
-- Fix NameError in __main__.py
-
-## [0.0.0-snapshot4]
-### FIXED
-- Use explicit relative imports in __init__.py
-
-## [0.0.0-snapshot3]
-### ADDED
-- Add Guix package definition file
-
-## [0.0.0-snapshot2]
-### ADDED
-- Add setup.py
-
-## [0.0.0-snapshot1]
+## [0.0.1]
 ### ADDED
 - Initial release

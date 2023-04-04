@@ -2,7 +2,7 @@ import os
 from setuptools import setup, find_packages
 
 # Meta information
-version = "0.0.0-snapshot3"
+version = "0.0.0-snapshot4"
 
 setup(
     # Basic info

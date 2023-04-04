@@ -1,2 +1,3 @@
-import nu.gnucash
-import nu.tbot
+from . import gnucash
+from . import tbot
+from . import pdfpw

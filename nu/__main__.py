@@ -29,7 +29,7 @@ def main():
 
     parser_pdfpw = subparsers.add_parser(
         "pdfpw", help="Password-protect one or more PDF files")
-    parser_pdfpw.add_argument(pdfs, nargs="+")
+    parser_pdfpw.add_argument("pdfs", nargs="+")
     parser_pdfpw.set_defaults(func=pdfpw_do)
 
     args = parser.parse_args()

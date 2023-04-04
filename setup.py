@@ -2,7 +2,7 @@ import os
 from setuptools import setup, find_packages
 
 # Meta information
-version = "0.0.0-snapshot4"
+version = "0.0.0-snapshot6"
 
 setup(
     # Basic info
@@ -18,8 +18,7 @@ setup(
         "Programming Language :: Python",
     ],
 
-    # Packages and depencies
-    py_modules=["nu"],
+    # Dependencies
     install_requires=[
         "xdg",
     ],

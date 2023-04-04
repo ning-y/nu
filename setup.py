@@ -2,7 +2,7 @@ import os
 from setuptools import setup, find_packages
 
 # Meta information
-version = "0.0.0-snapshot6"
+version = "0.0.0-snapshot7"
 
 setup(
     # Basic info
@@ -23,9 +23,9 @@ setup(
         "xdg",
     ],
 
-    # Scripts
-    entry_points={
-        "console_scripts": [
-            "nu = nu.__main__:main"],
-    },
+    # # Scripts
+    # entry_points={
+    #     "console_scripts": [
+    #         "nu = nu.__main__:main"],
+    # },
 )

@@ -1,3 +1,5 @@
+import getpass, subprocess
+
 def add_password(pdfs):
     password = getpass.getpass()
     assert password == getpass.getpass(prompt="Confirm: ")

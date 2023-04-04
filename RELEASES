@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Remember to update the version string in setup.py!
 
-## [0.0.1]
+## [0.0.2] - 2023-04-04
+### FIXED
+- Add missing imports to the pdfpw module
+
+## [0.0.1] - 2023-04-04
 ### ADDED
 - Initial release

@@ -1,0 +1,9 @@
+#+title: README
+
+* Upgrading
+
+Try:
+
+#+begin_src bash
+pipx install nu --force
+#+end_src

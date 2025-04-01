@@ -41,8 +41,19 @@ def parse_ocbc(rows: list[str]) -> list[Transaction]:
     rm_empties = filter(lambda x: x.strip() != "", rows)
     rm_header_comments = filter(
         lambda x: not re.search(HEADER_COMMENTS_RE_OCBC, x), rm_empties)
-    transactions = parse_rows_ocbc(rm_header_comments)
+    transactions = parse_rows_ocbc(fix_ocbc_broken_csv(rm_header_comments))
     return list(transactions)
+
+
+def fix_ocbc_broken_csv(rows: list[str]) -> list[str]:
+    r"""Fix OCBC's broken CSVs."""
+    fixed_rows = []
+    for row in rows:
+        if re.match("\d{2}/\d{2}/\d{4},\d{2}/\d{2}/\d{4},", row):
+            fixed_rows.append(row.strip())
+        else:
+            fixed_rows[-1] += f" {row.strip()} "
+    return fixed_rows
 
 
 def parse_row_posb(row: str) -> Transaction:
@@ -90,8 +101,8 @@ def parse_rows_ocbc(rows: list[str]) -> list[str]:
             parsed.append({
                 "date": datetime.datetime.strptime(row[0], DATE_FORMAT_STRPTIME_OCBC).date(),
                 "description": row[2],
-                "deposit": float(row[4].replace(",", "")) if row[4] != "" else None,
-                "withdrawal": float(row[3].replace(",", "")) if row[3] != "" else None})
+                "deposit": float(row[4].strip().replace(",", "")) if row[4].strip() != "" else None,
+                "withdrawal": float(row[3].strip().replace(",", "")) if row[3].strip() != "" else None})
         else:
             parsed[-1]["description"] += row[2]
     return list(map(lambda xs: Transaction(**xs), parsed))
